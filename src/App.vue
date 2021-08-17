@@ -1,26 +1,56 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="flexbox">
+    <Navbar @changeComponent="changeComp" />
+    <Projects v-if="chosenComp === 'Projects'" />
+    <About v-if="chosenComp === 'About'" />
+    <Contact v-if="chosenComp === 'Contact'" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import "material-design-icons";
+import Navbar from "./components/Navbar.vue";
+import Projects from "./components/Projects.vue";
+import About from "./components/About.vue";
+import Contact from "./components/Contact.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Navbar,
+    Projects,
+    About,
+    Contact,
+  },
+  computed: {},
+  data() {
+    return {
+      chosenComp: "Projects",
+    };
+  },
+  methods: {
+    changeComp(name) {
+      this.chosenComp = name;
+    },
+  },
+};
 </script>
 
-<style>
+<style lang="scss">
+@use "./App" as *;
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  width: 100%;
+  height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: $default-font-color;
+}
+
+#flexbox {
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 </style>

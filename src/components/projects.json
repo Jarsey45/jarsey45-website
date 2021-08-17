@@ -1,0 +1,51 @@
+{
+  "projects": [
+    {
+      "name": "CountriesDB (WIP)",
+      "desc": "App built in ReactJS with styled-components(scss) and GraphQL queries from GraphQL Country",
+      "lang": [
+        "TypeScript",
+        "ReactJS",
+        "GraphQL",
+        "styled-components",
+        "SASS"
+      ],
+      "date": "09-08-2021",
+      "link": "https://jarsey45.cloud/projects/countries-db",
+      "github": "https://github.com/Jarsey45/CountriesDB"
+    },
+    {
+      "name": "Notes App",
+      "desc": "Simple app with material designed notes. Built with Vue.js and SCSS. Inspired by google's 'keep' application.",
+      "lang": [
+        "JavaScript",
+        "Vue",
+        "SASS"
+      ],
+      "date": "01-08-2021",
+      "link": "https://jarsey45.github.io/NotesApp/",
+      "github": "https://github.com/Jarsey45/NotesApp"
+    },
+    {
+      "name": "Ball Game",
+      "desc": "Old school game. You need to place 4 or more balls in a row/column or diagonal.",
+      "lang": [
+        "JavaScript",
+        "webpack",
+        "p5.js"
+      ],
+      "date": "05-07-2021",
+      "link": "https://jarsey45.cloud/projects/mednela/Bile/",
+      "github": "https://github.com/Jarsey45/BallGame"
+    },
+    {
+      "name": "Minesweeper",
+      "desc": "Basic minesweeper project",
+      "lang": [
+        "JavaScript"
+      ],
+      "date": "06-10-2019",
+      "github": "https://github.com/Jarsey45/minesweeper_mendelahttps://"
+    }
+  ]
+}
