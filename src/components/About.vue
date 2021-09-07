@@ -2,7 +2,7 @@
   <div id="section">
     <div id="card">
       <div id="title">
-        My name is <span class="highlight"> Bartłomiej </span>
+        I'm <span class="highlight"> Bartłomiej </span>
         <p>
           I'm
           <span class="highlight">{{ new Date().getYear() - 101 }} </span> years

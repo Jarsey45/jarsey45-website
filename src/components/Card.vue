@@ -6,7 +6,7 @@
       </div>
       <div class="title">{{ title }}</div>
       <div>
-        <img class="github" src="../assets/github64.png" @click="toGithub" />
+        <img class="github" src="../assets/github64.png" @click="toGithub" alt="github"/>
       </div>
     </div>
     <div class="divider"></div>

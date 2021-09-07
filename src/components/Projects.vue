@@ -17,7 +17,6 @@
 </template>
 
 <script>
-/* eslint-disable vue/no-unused-components */
 import Card from "./Card.vue";
 
 export default {
@@ -29,8 +28,8 @@ export default {
   mounted() {
     fetch("https://api.jarsey45.cloud/v1/projects")
       .then((resp) => resp.json())
-      .then(({ projects }) => {
-        this.projects = projects;
+      .then(({ data }) => {
+        this.projects = data;
       });
   },
   methods: {},
