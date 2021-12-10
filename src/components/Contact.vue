@@ -20,7 +20,25 @@ export default {};
 <style lang="scss" scoped>
 @use "../App" as *;
 
+@mixin fadeCard {
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  animation: fade 2s forwards;
+}
+
 #section {
+  @include fadeCard();
+  @media screen and (max-width: 1200px) {
+    font-size: 0.3em;
+  }
+
   flex: 8;
   height: 100%;
   display: flex;
@@ -33,12 +51,17 @@ export default {};
     padding-right: 1em;
   }
   .item {
+    @media screen and (max-width: 1200px) {
+      font-size: 4em;
+      text-align: center;
+    }
     display: flex;
     padding: 0.5em;
     align-items: center;
     font-size: 3em;
     width: 75%;
     margin: 0 auto;
+    transition: all 0.5s ease;
 
     a {
       text-decoration: none;

@@ -184,6 +184,19 @@ export default {
   }
 }
 
+@mixin fadeCard($duration) {
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  animation: fade $duration forwards;
+}
+
 @mixin makeKeyframe($keyframeName) {
   animation: $keyframeName 2s;
   animation-fill-mode: forwards;
@@ -195,6 +208,7 @@ export default {
 
   #card {
     box-sizing: border-box;
+    @include fadeCard(1s);
 
     //border: 1px solid hsl(0, 0, 80%); //to Delete
     width: 80%;
@@ -213,6 +227,8 @@ export default {
     }
 
     #options {
+      @include fadeCard(3s);
+
       height: 1.6em;
       display: flex;
       width: 80%;
@@ -249,7 +265,7 @@ export default {
       border-radius: 5px;
       background: #eaeaea;
       padding-bottom: 4em;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.5s ease-in-out;
 
       #flexbox {
         margin: auto auto;

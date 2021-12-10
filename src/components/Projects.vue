@@ -62,13 +62,20 @@ export default {
 }
 
 #section {
+  @media screen and (min-width: 1200px) {
+    @include fontResize();
+  }
+  @media screen and (max-width: 1200px) {
+    font-size: 0.6em;
+  }
+
   flex: 8;
   height: 100%;
-  @include fontResize;
 
   #list {
     width: 100%;
     padding-top: 5%;
+    padding-bottom: 2em;
 
     .card {
       @include fadeCard;
@@ -77,6 +84,9 @@ export default {
       padding: 20px;
       width: 80%;
       margin-left: 10%;
+      @media screen and (max-width: 1200px) {
+        margin-left: 15%;
+      }
       margin-bottom: 4em;
       height: auto;
       border: 1px solid $border-color;
@@ -92,6 +102,9 @@ export default {
       .title {
         flex: 6;
         font-size: 2em;
+        @media screen and (max-width: 1200px) {
+          font-size: 1.5em;
+        }
         font-weight: 600;
         z-index: 1;
       }
@@ -153,8 +166,12 @@ export default {
         //background: #000;
 
         &:hover {
-          background: #000;
+          background: $dark-color;
           color: $dark-font-color;
+        }
+
+        @media screen and (max-width: 1200px) {
+          font-size: 0.9em;
         }
       }
 
@@ -170,6 +187,10 @@ export default {
         flex: 1;
         width: 2.5em;
         height: 2.5em;
+        @media screen and (max-width: 1200px) {
+          width: 2em;
+          height: 2em;
+        }
       }
     }
 
@@ -184,6 +205,9 @@ export default {
       left: -50%;
       opacity: 0.8;
       transition: left 0.5s ease-in-out;
+      @media screen and (max-width: 1200px) {
+        display: none;
+      }
     }
     .card:hover:before {
       left: 0;

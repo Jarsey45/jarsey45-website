@@ -1,5 +1,9 @@
 <template>
-  <nav>
+  <div id="burger" key="burger" @click="hideMenu()" :class="{ close: !hidden }">
+    <img v-if="hidden" src="../assets/bmenu.svg" />
+    <img v-else src="../assets/close.svg" />
+  </div>
+  <nav :class="{ hide: hidden }">
     <div id="name">
       <div id="box">
         Bartłomiej Kowalczyk
@@ -27,7 +31,6 @@
     >
       Contact
     </div>
-    
   </nav>
 </template>
 
@@ -36,6 +39,7 @@ export default {
   data() {
     return {
       active: [true, false, false],
+      hidden: true,
     };
   },
   methods: {
@@ -45,6 +49,9 @@ export default {
       this.active = newActive;
       this.$emit("changeComponent", name);
     },
+    hideMenu() {
+      this.hidden = !this.hidden;
+    },
   },
 };
 </script>
@@ -52,10 +59,56 @@ export default {
 <style lang="scss" >
 @use "../App" as *;
 
+#burger {
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
+  position: fixed;
+  z-index: 5;
+
+  left: 0.5em;
+  top: 1.2em;
+
+  border-radius: 20%;
+  background: $border-color;
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background: $primary-color;
+  }
+
+  img {
+    padding: 0.5em 0.5em 0.25em 0.5em;
+    height: 1.5em;
+    width: 1.5em;
+  }
+
+  &.close {
+    top: 90%;
+    background: $border-color;
+  }
+}
+
 nav {
+  @media screen and (max-width: 800px) {
+    position: fixed;
+    left: 0;
+    transition: left 0.6s ease;
+    z-index: 2;
+    background: $background-color;
+    height: 100%;
+  }
   flex: 2;
   border-right: 1px solid $border-color;
-  @include fontResize();
+
+  @media screen and (min-width: 801px) {
+    @include fontResize();
+  }
+
+  &.hide {
+    left: -100%;
+  }
 
   #name {
     color: $primary-color;
@@ -99,7 +152,7 @@ nav {
     }
 
     &.active {
-      background: #010101;
+      background: $dark-color;
       padding-left: 3em;
       color: $dark-font-color;
       transition: none;
