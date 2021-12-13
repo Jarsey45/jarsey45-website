@@ -1,4 +1,5 @@
 <template>
+  <div id="tint" :class="{ hide: hidden }" @click="hideMenu()"></div>
   <div id="burger" key="burger" @click="hideMenu()" :class="{ close: !hidden }">
     <img v-if="hidden" src="../assets/bmenu.svg" />
     <img v-else src="../assets/close.svg" />
@@ -59,6 +60,28 @@ export default {
 <style lang="scss" >
 @use "../App" as *;
 
+#tint {
+  @media screen and (min-width: 800px) {
+    opacity: 0;
+    display: none;
+  }
+
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: black;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  transition: all 0.5s ease;
+  opacity: 0.3;
+
+  &.hide {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
 #burger {
   @media screen and (min-width: 800px) {
     display: none;
@@ -95,7 +118,7 @@ nav {
     position: fixed;
     left: 0;
     transition: left 0.6s ease;
-    z-index: 2;
+    z-index: 4;
     background: $background-color;
     height: 100%;
   }
@@ -103,11 +126,20 @@ nav {
   border-right: 1px solid $border-color;
 
   @media screen and (min-width: 801px) {
+    font-size: 0.9em;
+  }
+
+  @media screen and (min-width: 1030px) {
     @include fontResize();
   }
 
   &.hide {
-    left: -100%;
+    left: -105%;
+
+    @media screen and (max-width: 300px) {
+      left: -150%;
+      max-width: 100vw;
+    }
   }
 
   #name {

@@ -36,11 +36,11 @@ export default {};
 #section {
   @include fadeCard();
   @media screen and (max-width: 1200px) {
-    font-size: 0.3em;
+    font-size: 0.2em;
   }
 
   flex: 8;
-  height: 100%;
+  //height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,18 +48,20 @@ export default {};
 
   .icon {
     width: 1em;
+    height: 1em;
     padding-right: 1em;
   }
   .item {
     @media screen and (max-width: 1200px) {
-      font-size: 4em;
+      font-size: 1.5vh;
       text-align: center;
+      padding: 0;
     }
     display: flex;
     padding: 0.5em;
     align-items: center;
     font-size: 3em;
-    width: 75%;
+    width: 60%;
     margin: 0 auto;
     transition: all 0.5s ease;
 
