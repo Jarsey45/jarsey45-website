@@ -120,7 +120,7 @@ export default {
         },
       ],
       edu: [
-        "ZSŁ W KRAKOWIE,  UPPER - SECONDARY SCHOOLS OF COMMUNICATIONS",
+        "ZSŁ W KRAKOWIE,  UPPER – SECONDARY SCHOOLS OF COMMUNICATIONS",
         "Politechnika Krakowska",
         "...?",
       ],

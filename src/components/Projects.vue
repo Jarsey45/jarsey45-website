@@ -53,12 +53,6 @@ export default {
   }
 
   animation: fade 1s forwards;
-
-  // @for $i from 1 to 2 {
-  //   &:nth-child(#{$i}) {
-  //     animation-delay: #{$i * 1s};
-  //   }
-  // }
 }
 
 #section {
@@ -71,6 +65,9 @@ export default {
 
   flex: 8;
   height: 100%;
+
+  overflow: hidden;
+  overflow-y: scroll;
 
   #list {
     width: 100%;
@@ -86,6 +83,7 @@ export default {
       margin-left: 10%;
       @media screen and (max-width: 1200px) {
         margin-left: 15%;
+        font-size: 1.4em;
       }
       margin-bottom: 4em;
       height: auto;

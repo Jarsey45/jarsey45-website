@@ -1,12 +1,18 @@
+//TODO: Accent for every project, from db; 
 <template>
   <div class="card">
     <div class="nav-box">
       <div>
-        <div class="link" @click="toLink">Click here!</div>
+        <div class="link" @click="toLink">Preview!</div>
       </div>
       <div class="title">{{ title }}</div>
       <div>
-        <img class="github" src="../assets/github64.png" @click="toGithub" alt="github"/>
+        <img
+          class="github"
+          src="../assets/github64.png"
+          @click="toGithub"
+          alt="github"
+        />
       </div>
     </div>
     <div class="divider"></div>

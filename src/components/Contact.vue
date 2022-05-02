@@ -53,7 +53,7 @@ export default {};
   }
   .item {
     @media screen and (max-width: 1200px) {
-      font-size: 1.5vh;
+      font-size: 3vw;
       text-align: center;
       padding: 0;
     }
