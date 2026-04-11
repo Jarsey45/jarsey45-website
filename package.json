@@ -1,25 +1,33 @@
 {
-  "name": "portfolio_page",
-  "version": "0.1.0",
+  "name": "portfolio-page",
   "private": true,
+  "version": "0.2.0",
+  "type": "module",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write src/"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "vue": "^3.5.32"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~5.0.9",
-    "@vue/cli-plugin-eslint": "~5.0.9",
-    "@vue/cli-service": "~5.0.9",
-    "@vue/compiler-sfc": "^3.0.0",
-    "babel-eslint": "^10.1.0",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.12.2",
+    "@vitejs/plugin-vue": "^6.0.5",
+    "@vue/tsconfig": "^0.9.1",
     "eslint": "^10.2.0",
-    "eslint-plugin-vue": "^7.0.0",
-    "sass": "^1.37.5",
-    "sass-loader": "^10.2.0"
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.8.0",
+    "globals": "^17.4.0",
+    "prettier": "3.8.2",
+    "sass-embedded": "^1.99.0",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.58.1",
+    "vite": "^8.0.4",
+    "vue-tsc": "^3.2.6"
   }
 }
